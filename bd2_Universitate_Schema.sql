@@ -1,6 +1,3 @@
--- Oracle APEX 22.2.2 SQL
--- Schema: BD_Universitate
--- DAN.PESCARU@CS.UPT.RO
 
 DROP TABLE IF EXISTS Contract;
 DROP TABLE IF EXISTS Curs;
