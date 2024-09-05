@@ -12,17 +12,17 @@ DROP TABLE IF EXISTS Facultate;
 CREATE TABLE Facultate(
 fid CHAR (3) NOT NULL,  --id facultate
 nume VARCHAR2 (40),     --nume facultate
-adr VARCHAR2 (40),      --adresa facultate
-tel VARCHAR2 (12),      --telefon principal facultate 
+adr VARCHAR (40),      --adresa facultate
+tel VARCHAR (12),      --telefon principal facultate 
 CONSTRAINT facult_pk PRIMARY KEY(fid)
 );
 
 CREATE TABLE Student(
 sid CHAR(6) NOT NULL,   --id student = numar matricol
 cnp CHAR (13),          --cod numeric personal
-nume VARCHAR2(40) NOT NULL, --numele studentului
+nume VARCHAR(40) NOT NULL, --numele studentului
 datan DATE,             --data nasterii
-adr VARCHAR2 (40),      --adresa student
+adr VARCHAR (40),      --adresa student
 an NUMBER(1) NOT NULL,  --anul de studiu (1,2,3,4, in cazuri particulare 5,6)
 media NUMBER (4,2),     --media anuala a ultimului an absolvit
 bursa NUMBER (5,0),     --bursa actuala
@@ -35,7 +35,7 @@ CONSTRAINT facult_fk  FOREIGN KEY (fid) REFERENCES Facultate(fid) on delete casc
 CREATE TABLE Profesor(
 pid CHAR (6) NOT NULL,  --id profesor
 cnp CHAR (13),          --cod numeric personal
-nume VARCHAR2 (40),     --numele profesorului
+nume VARCHAR (40),     --numele profesorului
 datan DATE,             --data nasterii
 fid CHAR (3) NOT NULL,  --id facultate din care face parte
 grad varchar2(4) NOT NULL, -- grad didactic
@@ -53,12 +53,12 @@ CONSTRAINT sala_pk PRIMARY KEY(cods)
 
 CREATE TABLE Curs(
 cid CHAR (5) NOT NULL,  --id curs
-titlu VARCHAR2 (32) NOT NULL, --titlu curs
+titlu VARCHAR (32) NOT NULL, --titlu curs
 fid CHAR (3) NOT NULL,  --id facultate care pune la dispozitie cursul
 an number(1), -- anul in care se tine cursul, daca este optional anul e null (ex. pedagogie)
 semestru number (2) NOT NULL, --semestrul cand se tine cursul, sem 1 si 2 sunt in anul 1, sem 3 si 4 sunt in anul 2 sem 5 si 6 sunt etc.
 pid CHAR (6),           --id profesor titular
-zi VARCHAR2 (8),        --ziua din saptamana in care are loc cursul
+zi VARCHAR (8),        --ziua din saptamana in care are loc cursul
 ora NUMBER (2),         --ora la care are loc cursul
 sala CHAR (4),          --codul salii in care are loc cursul
 CONSTRAINT crs_pk PRIMARY KEY(cid),
