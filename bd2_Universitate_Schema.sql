@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS Facultate;
 
 CREATE TABLE Facultate(
 fid CHAR (3) NOT NULL,  --id facultate
-nume VARCHAR2 (40),     --nume facultate
+nume VARCHAR (40),     --nume facultate
 adr VARCHAR (40),      --adresa facultate
 tel VARCHAR (12),      --telefon principal facultate 
 CONSTRAINT facult_pk PRIMARY KEY(fid)
